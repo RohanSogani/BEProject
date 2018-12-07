@@ -1,0 +1,92 @@
+{% extends "home.html" %}
+
+<style>
+  {% block style %}
+
+    .table td {
+        text-align: center;
+    }
+
+    input {
+    border: 0;
+    }
+
+  {% endblock %}
+</style>
+
+
+
+{% block content %}
+
+
+<form action="{% url 'compare' %}" method="post" role="form" name="compareReport">
+{% csrf_token %}
+
+
+<div style="width:45%;float:left;">
+    <table class="table table-bordered table-hover">
+        <thead><tr><td><b>#</b></td><td><b>Name</b></td></tr></thead>
+
+            {% for app in data1 %}
+
+                <tr>
+                    <td style="color:#08b247;"><input type="radio" name="apkname1" value="{{ app.apk_file.file_name.0 }}"> </td>
+                    <td>{{ app.apk_file.file_name.0 }} </td>
+                </tr>
+            {% endfor %}
+ 
+       </table>
+</div>
+
+<div style="width:45%;float:right;">
+    <table class="table table-bordered table-hover">
+        <thead><tr><td><b>#</b></td><td><b>Name</b></td></tr></thead>
+
+            {% for app in data2 %}
+
+                <tr>
+                    <td style="color:#08b247;"><input type="radio" name="apkname2" value="{{ app.apk_file.file_name.0 }}"> </td>
+                    <td>{{ app.apk_file.file_name.0 }} </td>
+                </tr>
+            {% endfor %}
+ 
+       </table>
+</div>
+
+<button type="submit" class="btn btn-success" style="margin-top:40%;" >Compare</button>
+
+</form>
+
+
+<!-- 
+<div style="width:45%;float:right;">
+<form action="">
+    <table class="table table-bordered table-hover">
+        <thead><tr><td><b>#</b></td><td><b>Name</b></td></tr></thead>
+            
+            {% for app in data2 %}
+
+                <tr>
+
+                
+                    <td style="color:#08b247;"><input type="radio" name="name2" value="{{ app.apk_file.file_name.0 }}"> </td>
+                
+                     <form action="" method="get" role="form" name="reportGenerator">
+                    <td><b><a><input readonly="readonly" name="application_name" value="{{ app.apk_file.file_name.0 }}" type="submit" style="background-color:#FFFFFF;text-align: center;color:#08b247;"></a></b></td>
+                 
+                         </form>
+                </tr>
+
+
+ 
+            {% endfor %}
+   </form>
+       </table>
+        <p><input type="button" value="Get Value"></p>
+</div>
+ -->
+
+
+
+
+{% endblock %}

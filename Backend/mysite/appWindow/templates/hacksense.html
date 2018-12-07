@@ -1,0 +1,61 @@
+{% extends "home.html" %}
+
+<style>
+  {% block style %}
+
+  .moduleDescription1
+  {
+  width:45%;
+  height:500px;
+  float:left;
+  background-color:;
+  text-align: center;
+  margin-top: 10%;
+  }
+
+  .moduleDescription2
+  {
+  width:55%;
+  height:500px;
+  float:right;
+  background-color:;
+  margin-top: 1%;
+  }
+
+
+  {% endblock %}
+</style>
+
+{% block content %}
+
+
+
+<div class="container-fluid">
+
+  <a href="{% url 'index' %}"><i class="fa fa-chevron-left fa-3x" style="color:#20C05C;" width="240" height="240"></i></a>
+  <div class="row">
+
+  <div class="moduleDescription1" style="">
+      <i class="fa fa-cogs  fa-5x" style="color:#20C05C;" width="240" height="240"></i> 
+          <h2>HackSense</h2>
+  </div>
+
+  <div class="moduleDescription2" style="">
+      <p style="font-size:1.4em;">
+
+          HackeSense is the Excalibur sword of our project. It aims to dissect, coerce and beat the truth of your application ;). HackeSense modules run Dynamic and Static analysis tests on your application solely designed to expose flaws and faults in application which may lead to data exposure from your smartphone.
+      <br/><br/>
+
+      Step 1: The application is first subjected to a static analyzer which a list of Android system permissions the application requires to function. Static analysis involves decompilation of apk files to source code and then extraction of permissions from the application manifest file.
+      <br/><br/>
+
+      Step 2: The application is now subjected a thorough dynamic pen-testing to identify threats to your android phone. These threats include as of now SQL injection but the future scope plans the complete net of the OWAPS Top 10 threat index. These tests are used to determine the extent of secure development practices adopted by the application developers and to expose loopholes. It also helps determine the level of access to users’ private data.
+
+      </p>
+  </div>
+
+  </div>
+</div>
+
+
+{% endblock %}

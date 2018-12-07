@@ -1,0 +1,130 @@
+{% extends "home.html" %}
+{% load staticfiles %}
+<style>
+  {% block style %}
+
+    .table td {
+        text-align: center;
+    }
+
+    input {
+    border: 0;
+    }
+
+  {% endblock %}
+</style>
+
+    <!-- ladda js files -->
+
+
+
+{% block content %}
+
+
+
+<div id="overlay-back"></div>
+<div id="overlay">
+    <div id="dvLoading">
+
+        <img id="loading-image" src="{% static 'img/Preloader.gif' %}" alt="Loading..." />
+    </div>
+</div>
+
+
+
+
+<!-- Main component for a primary marketing message or call to action -->
+<div class="jumbotron" style="background-color:#dbffe8;">
+    <h1 style="text-align:center;">Upload .apk file here</h1>
+
+    <!-- Upload form. Note enctype attribute! -->
+    <form action="{% url 'upload' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+
+        <div class='row'>
+
+            <div class="col-lg-6 col-lg-offset-4 text-center">
+                <p > {{ form.docfile }}  </p>
+            </div>
+
+
+            <div class="col-lg-6 col-lg-offset-3 text-center">
+
+
+                <div class="form-buttons-wrapper">
+                                 <input id="submit" name="submit" type="submit" class="form-submit-button" style="align:center;" value="Upload"/>
+                </div>
+    
+
+            </div>
+
+
+
+        </div>
+
+    </form>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!------------------------------------------------******###*******---------------------------------------------------------->
+
+
+<div class="jumbotron" style="background-color:#dbffe8;height:400px;">
+
+    <div style="width:50%;background-color:;height:300px;float:left;">
+        <h4 style="text-align:center;">Recent scans</h4>
+            
+        <table class="table table-bordered">
+            <thead><tr><td>Sr.No.</td><td>Name</td></tr></thead>
+
+            {% for app in recentdata %}
+
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+
+                    <td> {{ app.apk_file.file_name.0 }}</td>
+
+                </tr>
+
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+
+    <div style="width:50%;background-color:;height:200px;float:right;">
+        <h4 style="text-align:center;">Most searched</h4>
+
+        <table class="table table-bordered">
+            <thead><tr><td>Sr.No.</td><td>Name</td></tr></thead>
+
+
+        </table>
+
+    </div>
+
+</div>
+
+
+
+<!------------------------------------------------******###*******---------------------------------------------------------->
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,110 @@
+{% extends "home.html" %}
+
+<style>
+  {% block style %}
+
+    .table td {
+        text-align: center;
+    }
+
+    input {
+    border: 0;
+    }
+
+  {% endblock %}
+</style>
+
+
+
+{% block content %}
+
+<!-- Main component for a primary marketing message or call to action -->
+<div class="jumbotron" style="background-color:#dbffe8;">
+    <h1 style="text-align:center;">Upload .apk file here</h1>
+
+    <!-- Upload form. Note enctype attribute! -->
+    <form action="{% url 'upload' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+
+        <div class='row'>
+
+            <div class="col-lg-6 col-lg-offset-4 text-center">
+                <p > {{ form.docfile }}  </p>
+            </div>
+
+
+            <div class="col-lg-6 col-lg-offset-3 text-center">
+                <input type="submit" class="btn btn-success" style="align:center;" value="Upload"/>
+            </div>
+
+
+            <div class="col-lg-6 col-lg-offset-3 text-center">
+            </br>
+            {% if name %}
+                <p> Successfully uploaded
+                    {{ name }}</p>
+            {% endif %}
+            </div>
+
+        </div>
+
+    </form>
+
+
+</div>
+
+
+<div class="jumbotron" style="background-color:#FFFFFF;height:500px;">
+
+
+
+   
+ <div style="width:49%;background-color:;height:;float:left;">
+    <div class="panel panel-default">
+    <div class="panel-heading" style="background-color:#dbffe8;"><h2 style="text-align:center;">Recent Uploads</h2></div>
+    <div class="panel-body">
+        
+        <table class="table table-bordered table-hover">
+            <thead><tr><td>#</td><td>Name</td></tr></thead>
+            {% for app in recentdata %}
+                <tr>
+                    <td style="text-align:center;">{{ forloop.counter }}</td>
+                    <form action="" method="get" role="form" name="reportGenerator">
+                    <td><b><a><input readonly="readonly" name="application_name" value="{{ app.apk_file.file_name.0 }}" type="submit" style="background-color:#FFFFFF;text-align: center;color:#08b247;"></a></b></td>
+                     </form>
+                </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+  </div>
+</div>
+
+
+
+ <div style="width:49%;background-color:;height:;float:right;">
+    <div class="panel panel-default">
+    <div class="panel-heading" style="background-color:#dbffe8;"><h2 style="text-align:center;">Most Searched Application</sh2></div>
+    <div class="panel-body">
+        
+        <table class="table table-bordered table-hover">
+            <thead><tr><td>#</td><td>Name</td></tr></thead>
+            {% for app in mostsearched %}
+                <tr>
+                    <td style="text-align:center;">{{ forloop.counter }}</td>
+                    <form action="" method="get" role="form" name="reportGenerator">
+                    <td><b><a><input readonly="readonly" name="application_name" value="{{ app.apk_file.file_name.0 }}" type="submit" style="background-color:#FFFFFF;text-align: center;color:#08b247;"></a></b></td>
+                     </form>
+                </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+
+
+{% endblock %}

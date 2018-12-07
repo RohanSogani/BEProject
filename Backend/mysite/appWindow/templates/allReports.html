@@ -1,0 +1,74 @@
+{% extends "home.html" %}
+
+<style>
+  {% block style %}
+
+    .table td {
+        text-align: center;
+    }
+
+    input {
+    border: 0;
+    }
+
+  {% endblock %}
+</style>
+
+
+{% block content %}
+  
+    <div style="width: 30%; margin-left: auto; margin-right: auto;" >
+      <h2> Cumulative Statistics </h2>
+      <canvas id="canvas" height="450" width="450"></canvas>
+    </div>
+
+    <table class="table table-bordered table-hover">
+        <thead><tr><td><b>#</b></td><td><b>Name</b></td></tr></thead>
+            {% for app in data %}
+
+                <tr>
+                    <td style="color:#08b247;">{{ forloop.counter }}</td>
+                     <form action="" method="get" role="form" name="reportGenerator">
+                    <td><b><a><input readonly="readonly" name="application_name" value="{{ app.apk_file.file_name.0 }}" type="submit" style="background-color:#FFFFFF;text-align: center;color:#08b247;"></a></b></td>
+                 
+                         </form>
+                </tr>
+
+
+
+            {% endfor %}
+
+       </table>
+
+
+
+{% endblock %}
+
+  {% block javascript %}
+
+       <script>
+  var radarChartData = {
+    labels: ["Signature Or System", "System", "Development", "Normal", "Dangerous", "Signature"],
+    datasets: [
+      {
+        label: "My Second dataset",
+        fillColor: "rgba(151,187,205,0.2)",
+        strokeColor: "rgba(151,187,205,1)",
+        pointColor: "rgba(151,187,205,1)",
+        pointStrokeColor: "#fff",
+        pointHighlightFill: "#fff",
+        pointHighlightStroke: "rgba(151,187,205,1)",
+        data: [{{ count_dict.sigOrSys }}, {{ count_dict.system }} , {{ count_dict.development }} , {{ count_dict.normal }} , {{ count_dict.dangerous }} , {{ count_dict.signature }}]
+      }
+    ]
+  };
+
+  window.onload = function(){
+    window.myRadar = new Chart(document.getElementById("canvas").getContext("2d")).Radar(radarChartData, {
+      responsive: true
+    });
+  }
+
+  </script>
+
+  {% endblock %}

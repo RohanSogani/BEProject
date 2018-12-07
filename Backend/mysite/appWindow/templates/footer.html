@@ -1,0 +1,58 @@
+{% load staticfiles %}
+
+<style>
+  {% block style %}
+
+    #footer
+    {
+        color:#FFFFFF;
+        background-color:#20C05C;
+    }
+
+    .footer-body > li > a
+    {
+      color:#FFFFFF;
+    }
+
+    .h2
+    {
+    	color:#333;
+    }
+
+
+  {% endblock %}
+</style>
+
+
+		<section id="footer" >
+			<div class="container-fluid" style="margin-top:50px;">
+				<div class="row" style="align:center;height:100px;">
+						<div class="col-md-12" style="padding-top:50px;">
+							<ul class="list-inline list-unstyled" style="text-align:center;">
+							<li><a href="{% url 'index' %}" class="font-heading" style="color:#FFFFFF;"><h4>Home &nbsp&nbsp|</h4></a></li>
+							<li><a href="{% url 'allReports' %}" class="font-heading" style="color:#FFFFFF;"><h4>Reports &nbsp&nbsp|</h4></a></li>
+							<li><a href="{% url 'team' %}" class="font-heading" style="color:#FFFFFF;"><h4>Our Team &nbsp&nbsp</h4></a></li>
+<!-- 							<li><a href="" class="font-heading" style="color:#FFFFFF;"><h4>Contact Us </h4></a></li> -->
+						</ul>
+					</div>
+
+				</div>
+			</div>
+
+		
+			<div class="container" style="margin-bottom:-50px;">
+				<div class="row">
+					<div class="col-md-12">
+                        </br>
+						<ul class="list-inline list-unstyled" style="text-align:center;">
+							<!-- <li><a href="" class="font-heading" style="color:#333;">Copyright &copy; 2016 xCalibur. All rights reserved.</a></li> -->
+						</ul>
+					</div>
+				</div>
+            </div>   
+
+
+		</section>
+
+
+

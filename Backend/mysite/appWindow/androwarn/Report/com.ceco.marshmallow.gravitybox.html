@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="utf-8">
+	<title>Androwarn report</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Le styles -->
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<style type="text/css">
+	body {
+		padding-top: 60px;
+		padding-bottom: 40px;
+	}
+	.sidebar-nav {
+		padding: 9px 0;
+	}
+	</style>
+	<link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+	  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Le fav and touch icons -->
+	<link rel="shortcut icon" href="ico/favicon.ico">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+  </head>
+
+  <body>
+
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				<a class="brand">Androwarn Report</a>
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li><a>com.ceco.marshmallow.gravitybox</a></li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid">
+		<div class="row-fluid">
+
+			<div class="span3">
+				<div class="well sidebar-nav">
+					<ul class="nav nav-list">
+					<li class="nav-header">Application Information</li>
+			<li class="active"><a href="#application-name" data-toggle="tab">Application Name</a></li>
+			<li><a href="#application-version" data-toggle="tab">Application Version</a></li>
+			<li><a href="#package-name" data-toggle="tab">Package Name</a></li>
+			<li><a href="#description" data-toggle="tab">Description</a></li>
+			<li class="nav-header">Analysis Results</li>
+			<li><a href="#telephony-identifiers-leakage" data-toggle="tab">Telephony Identifiers Leakage</a></li>
+			<li><a href="#device-settings-harvesting" data-toggle="tab">Device Settings Harvesting</a></li>
+			
+			<li><a href="#connection-interfaces-exfiltration" data-toggle="tab">Connection Interfaces Exfiltration</a></li>
+			
+			<li><a href="#audio-video-eavesdropping" data-toggle="tab">Audio Video Eavesdropping</a></li>
+			
+			
+			<li><a href="#code-execution" data-toggle="tab">Code Execution</a></li>
+			<li class="nav-header">Apk File</li>
+			<li><a href="#file-name" data-toggle="tab">File Name</a></li>
+			<li><a href="#fingerprint" data-toggle="tab">Fingerprint</a></li>
+			<li class="nav-header">Androidmanifest.xml</li>
+			<li><a href="#permissions" data-toggle="tab">Permissions</a></li>
+						
+					</ul>
+				</div><!--/.well -->
+			</div><!--/span-->
+
+			<div class="span9">
+				<div class="hero-unit" id="Package_name">
+					<div class="tab-content">
+					
+						<div class="tab-pane active" id="application-name">
+							<h2>Application Name</h2>
+							<h3>N/A</h3>
+						</div>
+					
+						<div class="tab-pane" id="application-version">
+							<h2>Application Version</h2>
+							<h3>6.0.4</h3>
+						</div>
+					
+						<div class="tab-pane" id="package-name">
+							<h2>Package Name</h2>
+							<h3>com.ceco.marshmallow.gravitybox</h3>
+						</div>
+					
+						<div class="tab-pane" id="description">
+							<h2>Description</h2>
+							<h3>N/A</h3><h3>N/A</h3>
+						</div>
+					
+						<div class="tab-pane" id="telephony-identifiers-leakage">
+							<h2>Telephony Identifiers Leakage</h2>
+							<h3>This application reads the phone's current state</h3><h3>This application reads the device phone type value</h3>
+						</div>
+					
+						<div class="tab-pane" id="device-settings-harvesting">
+							<h2>Device Settings Harvesting</h2>
+							<h3>This application logs the message '4' under the tag 'GravityBox'</h3><h3>This application logs the message 'Cannot create AudioRecordings directory' under the tag 'GB:RecordingService'</h3><h3>This application logs the message '4' under the tag 'GB:ScreenRecordingService'</h3><h3>This application logs the message 'Cannot create Pictures directory' under the tag 'GB:ScreenRecordingService'</h3><h3>This application logs the message 'Cannot create Screenrecord directory' under the tag 'GB:ScreenRecordingService'</h3><h3>This application logs the message '8' under the tag 'GB:ScreenRecordingService'</h3><h3>This application logs the message '9' under the tag 'GB:ScreenRecordingService'</h3><h3>This application logs the message 'Ljava/io/BufferedReader;->readLine()Ljava/lang/String;' under the tag 'GB:ScreenRecordingService'</h3><h3>This application logs the message 'Error while starting the screenrecord process' under the tag 'GB:ScreenRecordingService'</h3><h3>This application logs the message 'isScreenrecordSupported: screen recording not supported on Exynos devices' under the tag 'GB:ScreenRecordingService'</h3><h3>This application logs the message 'isScreenrecordSupported: screen recording not supported on Exynos devices' under the tag 'Ljava/io/File;->canExecute()Z'</h3><h3>This application logs the message 'startScreenrecord: System does not support screen recording' under the tag 'GB:ScreenRecordingService'</h3><h3>This application logs the message 'startScreenrecord: Recording is already running, ignoring screenrecord start request' under the tag 'GB:ScreenRecordingService'</h3><h3>This application logs the message 'startScreenrecord: Previous recording is still being processed, ignoring screenrecord start request' under the tag 'GB:ScreenRecordingService'</h3><h3>This application logs the message 'Unlocker uninstalled too early' under the tag 'GravityBox'</h3><h3>This application logs the message '6' under the tag 'GravityBox'</h3><h3>This application logs the message '3' under the tag 'GB:AppPickerPreference'</h3><h3>This application logs the message '7' under the tag 'GB:AppPickerPreference'</h3><h3>This application logs the message '2' under the tag 'VolumePreference'</h3><h3>This application logs the message 'Ljava/lang/StringBuffer;->toString()Ljava/lang/String;' under the tag 'GravityBox'</h3><h3>This application retrieves '' information about the 'com.ceco.gravitybox.unlocker' application installed on the system</h3><h3>This application retrieves '' information about the 'Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;' application installed on the system</h3>
+						</div>
+					
+						<div class="tab-pane" id="connection-interfaces-exfiltration">
+							<h2>Connection Interfaces Exfiltration</h2>
+							<h3>This application reads details about the currently active data network</h3>
+						</div>
+					
+						<div class="tab-pane" id="audio-video-eavesdropping">
+							<h2>Audio Video Eavesdropping</h2>
+							<h3>This application records audio from the 'MIC' source </h3>
+						</div>
+					
+						<div class="tab-pane" id="code-execution">
+							<h2>Code Execution</h2>
+							<h3>This application executes a UNIX command containing this argument: '3'</h3>
+						</div>
+					
+						<div class="tab-pane" id="file-name">
+							<h2>File Name</h2>
+							<h3>xyz.apk</h3>
+						</div>
+					
+						<div class="tab-pane" id="fingerprint">
+							<h2>Fingerprint</h2>
+							<h3>MD5: baa97a2d69edc8115e64a61b5893b3f9</h3><h3>SHA-1: 8ba56692622147223121769dbc791bb3bd40030e</h3><h3>SHA-256: 23f63230b77e6b3a7e114c0b78ba16f5f3db7b663758ab536f3ede10c27371a3</h3>
+						</div>
+					
+						<div class="tab-pane" id="permissions">
+							<h2>Permissions</h2>
+							<h3>android.permission.READ_SYNC_SETTINGS</h3><h3>android.permission.WRITE_SYNC_SETTINGS</h3><h3>android.permission.CAMERA</h3><h3>android.permission.RECORD_AUDIO</h3><h3>android.permission.READ_EXTERNAL_STORAGE</h3><h3>android.permission.WRITE_EXTERNAL_STORAGE</h3><h3>android.permission.WAKE_LOCK</h3><h3>android.permission.INTERNET</h3><h3>android.permission.RECEIVE_BOOT_COMPLETED</h3><h3>android.permission.VIBRATE</h3><h3>android.permission.ACCESS_WIFI_STATE</h3><h3>android.permission.CHANGE_WIFI_STATE</h3>
+						</div>
+					
+					</div>
+				</div>
+			</div><!--/span-->
+
+		</div><!--/row-->
+	<hr>
+
+	<footer>
+		<p>&copy; Androwarn</p>
+		<p><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/fr/80x15.png" /></a></p>
+	</footer>
+
+	</div><!--/.fluid-container-->
+
+	<!-- Le javascript
+	================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap-transition.js"></script>
+	<script src="js/bootstrap-alert.js"></script>
+	<script src="js/bootstrap-modal.js"></script>
+	<script src="js/bootstrap-dropdown.js"></script>
+	<script src="js/bootstrap-scrollspy.js"></script>
+	<script src="js/bootstrap-tab.js"></script>
+	<script src="js/bootstrap-tooltip.js"></script>
+	<script src="js/bootstrap-popover.js"></script>
+	<script src="js/bootstrap-button.js"></script>
+	<script src="js/bootstrap-collapse.js"></script>
+	<script src="js/bootstrap-carousel.js"></script>
+	<script src="js/bootstrap-typeahead.js"></script>
+
+	<script>
+		$(function () {
+			$('#myTab a:last').tab('show');
+			$('.sidebar-nav a[href*=#]').click(function(){$('body').animate({ scrollTop: 0}, 200); });
+		})
+	</script>
+
+  </body>
+</html>
